@@ -1,0 +1,167 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* căn chỉnh nằm trong phạm vi */
+    box-sizing: border-box;
+}
+html{
+    /* font chữ cho toàn bộ chữ */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#header{
+    height: 46px;
+    background-color: black;
+    /* Cố định header khi cuộn trang web */
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    /* để cho ảnh không đề header */
+    z-index: 1;
+}
+/* Menu chính */
+#nav li{
+    /* inline(trên 1 hàng) */
+   display: inline-block; 
+   /* cố định cha */
+   position: relative;
+}
+/* Nếu a:hover thì khi click vào more sẽ bị mất màu đen */
+ /* Click chuột đổi màu menu chính */
+#nav > li:hover > a{
+    background-color: gray;
+     /* Ăn theo line-height */
+    display: inline-block;
+}
+#nav li a{
+    /* bỏ gạch chân chữ */
+    text-decoration: none;
+    /* Căn giữa chữ line(đường) phải bằng chiều cao của header*/
+    line-height: 46px;
+    /* trên dưới 0px trái phải 24px */
+    padding: 0 24px;
+    display: block;
+}
+/* Lấy con trực tiếp */
+/* tách ra 2 trường hợp mới điều chỉnh đc màu chữ */
+#nav > li >a{
+    color:white;
+    /* in hoa menu chinhs menu con khong anh huowng */
+    text-transform: uppercase;
+}
+
+/* Menu con */
+.subnav{
+    /* ẩn đi menu */  
+    display: none; 
+    min-width: 60px;
+    /* di chuyển more về đúng vị trí từ position gần nhất */
+   position:absolute ;
+   background-color: white;
+   color:black;
+   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+#nav .subnav a{
+    color:black;
+    /* điều chỉnh menu con cho gọn */
+    padding: 0 12px;
+    line-height: 38px;
+    /* Bóng đổ để có thể tiện nhìn thấy khi nền trắng ... */
+}
+/* Hiện menu khi trỏ chuột */
+#nav li:hover .subnav{
+    display:block;
+}
+/* Đổi màu khi trỏ vào menu con */
+#nav  .subnav  li:hover{
+    background-color:brown;
+    /* Lấy đc hết chiều rộng khi trỏ chuột*/
+    width: 100%;
+}
+
+/* icon trỏ xuống */
+#nav .icon-bottom {
+    width: 24px;
+    bottom:50px;
+    margin-bottom: -5px;  
+    box-sizing: border-box;
+}
+/* icon tìm kiếm */
+#header .search-btn{
+      /*Kéo icon sang phải */
+    float:right; 
+    padding: 0 21px;
+}
+#header .search-btn:hover{
+background-color:#f44336;
+/* Cái gì chọn được sẽ đổi trỏ */
+cursor: pointer;
+}
+/* Điều chỉnh lại nav có nội dung đến đâu thì chỉ chiểm chiều ngang tới đó
+nếu không icon search sẽ bị đẩy xuống
+*/
+#nav{
+    /* mất tinhs kế thừa */
+    display: inline-block;
+}
+#header .icon-search{
+   color:white;
+   width: 31px;
+   margin-top: 12px;
+}
+
+#Slider{
+    /* chiều cao tối thiêu */
+    margin-top: 46px;
+    /* tỉ lệ theo chiều ngang nếu thu nhỏ phong to sẽ không bị méo ảnh */
+    padding-top: 50% ;
+    width: 100%;
+    /* positione / background size / không lặp lại */
+    background: url('/HTML-CSS/img/anime.jpg') top center / cover no-repeat; 
+       /* Để không chiếm padding */
+    position: relative; 
+}
+/* căn chỉnh chữ */
+#Slider .text{
+  position: absolute;
+  bottom:47px;
+  left:50%;   
+  transform: translate(-50%);
+  text-align: center;
+  color:black;
+}
+
+ #content .content-section{
+    width: 800px;
+    padding: 64px 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#content .section-heading{
+    font-size: 30px;
+    /* đẩy chữ xa ra */
+    letter-spacing: 4px;
+    text-align: center;  
+}
+#content .section-sub-heading{
+    font-size: 15px;
+    margin-top:25px;
+    text-align: center;
+    /* chữ nghiêng */
+    font-style: italic;
+      /* Độ mờ chữ */
+    opacity: 0.6;
+}
+#content .about-text{
+    margin-top:25px;
+    font-size: 15px;
+    /* Căn đều chữ 2 bên */
+    text-align: justify;
+}
+
+
+
+
+
+
